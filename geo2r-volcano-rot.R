@@ -3,6 +3,7 @@ install.packages("ggrepel")
 install.packages("readr")
 library(readr)
   #Installing required packages
+setwd("~/GitHub/rotenone-geo2r-vis")
 xp1 <- read_delim("expression/8_dmso_vs_8_rot50_12.tsv", 
                                     delim = "\t", escape_double = FALSE, 
                                     trim_ws = TRUE)
@@ -48,7 +49,7 @@ ggplot(data=xp, aes(x=logFC, y=-log10(P.Value), col=diffexpressed, label=xplabel
   #Defining the function to generate a volcano plot from the given expression data
 volcp(xp1)
   #Displaying the plot
-jpeg(file="rot-xp1.jpeg")
-volcp(xp1)
+jpeg(file="rot-xp4.jpeg")
+volcp(xp2)
 dev.off()
   #Saving the plot as jpeg to current directory
